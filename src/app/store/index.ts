@@ -530,17 +530,20 @@ export const useStore = create<{
         status: ClapSegmentStatus.COMPLETED,
       }))
   
-      clap.segments.push(newSegment({
-        track: 3,
-        startTimeInMs: currentElapsedTimeInMs,
-        assetDurationInMs: defaultSegmentDurationInMs,
-        category: ClapSegmentCategory.DIALOGUE,
-        prompt: speech,
-        outputType: ClapOutputType.AUDIO,
-        status: ClapSegmentStatus.TO_GENERATE,
-      }))
+      setTimeout(()=>{
+        clap.segments.push(newSegment({
+          track: 3,
+          startTimeInMs: currentElapsedTimeInMs,
+          assetDurationInMs: defaultSegmentDurationInMs,
+          category: ClapSegmentCategory.DIALOGUE,
+          prompt: speech,
+          outputType: ClapOutputType.AUDIO,
+          status: ClapSegmentStatus.TO_GENERATE,
+        }))
+      },100000)
   
-      // the presence of a camera is mandatory
+      setTimeout(()=>{
+              // the presence of a camera is mandatory
       clap.segments.push(newSegment({
         track: 4,
         startTimeInMs: currentElapsedTimeInMs,
@@ -550,6 +553,7 @@ export const useStore = create<{
         outputType: ClapOutputType.TEXT,
         status: ClapSegmentStatus.COMPLETED,
       }))
+      },100000)
   
       currentElapsedTimeInMs += defaultSegmentDurationInMs
     }

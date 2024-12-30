@@ -131,9 +131,6 @@ function BottomBar() {
         `space-x-3`,
         `scale-[0.9]`
       )}>
-        <About />
-        <Discord />
-        <Advert />
       </div>
       <div className={cn(
       `flex flex-row`,
@@ -143,7 +140,6 @@ function BottomBar() {
       `space-x-3`,
       `scale-[0.9]`
     )}>
-      <SettingsDialog />
       {/*<Button
         onClick={handleUpscale}
         disabled={!prompt?.length || remainingImages > 0 || isUpscaling || !Object.values(upscaleQueue).length}
@@ -198,9 +194,7 @@ function BottomBar() {
               remainingImages ? `${allStatus.length - remainingImages}/${allStatus.length} ⌛` : `PDF`
             }</span>
         </Button>
-  
-       <Share />
-      </div>
+        </div>
     </div>
   )
 }

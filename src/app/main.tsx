@@ -325,7 +325,6 @@ export default function Main() {
           }
         </div>
       </div>
-      <SignUpCTA />
       <Zoom />
       <BottomBar />
       <div className={cn(
